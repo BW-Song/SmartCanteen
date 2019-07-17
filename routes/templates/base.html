@@ -1,0 +1,14 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}} - Smart Canteen</title>
+        {% else %}
+        <title>Welcome to Smart Canteen</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Smart Canteen: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Sign up</title>
+
+	<!-- CSS
+	================================================== -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/boxed.css">
+
+	<!-- js
+	================================================== -->
+	<script src = "javascript/sign_up.js"></script>
+</head>
+
+<body>
+	<!-- Wrapper Start -->
+	<div id="wrapper">
+	
+	<!-- Header
+	================================================== -->
+	<header class="ie-dropdown-fix">
+	  <!-- Header -->
+		<div id="header">
+				<div id="logo">
+					<a href="#"><img src="images/logo.jpg" alt="ExPerth Logo" /></a>
+					<div id = "tagline">It's time to Explore Perth!</div>
+				</div>
+			
+			 <!-- Contact Details-->
+				<div id="contact-details">
+					<ul>
+						<li><i class="mini-ico-envelope"></i><a href="#">21644327@student.uwa.edu.au</a></li>
+						<li><i class="mini-ico-user"></i>+61 451 178 805</li>
+					</ul>
+				</div>		
+		</div>	
+	  <!-- Header / End -->
+
+	<!-- Navigation -->
+			<div id="navigation">
+				<ul id="nav">
+					<li><a href="home.html" >Home</a></li>
+					<li><a href="About.html">About Perth</a></li>
+					<li><a class = "cursor">Attractions</a>
+					  <ul>
+					    <li><a href = "Attractions.html">Top 3 places</a></li>
+					    <li><a href = "Attraction_fremantle.html"> Fremantle</a></li>
+						<li><a href = "Attraction_rottnest.html">Rottnest Island</a></li>
+						<li><a href = "Attraction_kingspark.html">Kings Park</a></li>
+					  </ul>
+					</li>
+					<li><a href="Survey.html">Survey</a></li>
+					<li><a class = "cursor on">Sign in/up</a>
+					  <ul>
+					    <li><a href = "sign_in.html">Sign in</a></li>
+						<li><a href = "sign_up.html" class = "on">Sign up</a></li>					
+					  </ul>
+					</li>
+				</ul>
+			</div> 			
+	<!-- Navigation / End -->
+	</header>
+    <!-- header End -->
+
+
+	<!-- Content
+	================================================== -->
+<section class = "sign_up_main">
+		<!--sign up form starts here-->
+		<h1 class = "sign_up_head1">Sign Up</h1>
+		
+		<div class = "sign_up_form">		
+		 <form action = "#" name="myForm" onsubmit = "return locate();">
+		   <table class = "center">
+			  <tr>
+			   <td ><p class = "font">Username</p></td>
+			   <td ><input type="text" name="Name" /></td>
+			  </tr>
+			  <tr>
+			   <td ><p class = "font">Password</p></td>
+			   <td><input type="password" name="Password" placeholder = "At least 6 characters"/></td>
+			  </tr>
+			  
+			  <tr>
+			   <td ><p class = "font">Confirm</p></td>
+			   <td><input type="password" name="Password2" placeholder = "Repeat password"/></td>
+			 </tr>
+			 
+			 <tr>
+			   <td ><p class = "font">Email</p></td>
+			   <td><input type="text" name="Email" /></td>
+			 </tr>
+			 
+			 <tr>
+			 <td ><p class = "font">Country</p></td>
+			 <td>
+			 <select name="Country">
+			   <option value="-1" selected>choose one</option>
+			   <option value="1">Austrlia</option>
+			   <option value="2">China</option>
+			   <option value="3">USA</option>
+			   <option value="3">Others</option>
+			 </select>
+			 </td>
+			 </tr>
+			 <tr>
+			   <td><button class="submit location1" type="submit">Sign up</button></td>
+			   <td><button class="submit location2" type="reset">Cancel</button></td>
+			 </tr>
+		 </table>
+	 </form>
+		</div>
+</section>
+	
+<!-- Footer
+================================================== -->
+   <footer class = "footer_main">
+      <div class = "column1">
+	   <ul>
+	     <li><a class = "footer-headline" href = "Disclaimer.html">Disclaimer</a></li>
+		 <li><a class = "footer-headline" href = "SiteMap.html">SiteMap</a></li>
+		 <li><a class = "footer-headline" href = "Contact.html">Contact Us</a></li>
+		 <li><a class = "footer-headline" href = "Validation.html">HTML5 && CSS validation</a></li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "column2">
+	   <ul>
+	     <li><a class = "footer-headline" href = "home.html">Home</a></li>
+		 <li><a class = "footer-headline" href = "About.html">About Perth</a></li>
+		 <li><a class = "footer-headline" href = "Survey.html">Survey</a></li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "column3">
+	   <ul>
+	     <li><a class = "footer-headline">Attractions</a>
+		   <ul>
+		     <li><a class = "footer-subline " href = "Attractions.html">Top 3 Places</a></li>
+		     <li><a class = "footer-subline " href = "Attraction_fremantle.html">Fremantle</a></li>
+			 <li><a class = "footer-subline " href = "Attraction_rottnest.html">Rottnest Island</a></li>
+			 <li><a class = "footer-subline " href = "Attraction_kingspark.html">Kings Park</a></li>
+		   </ul>
+		 </li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "column4">
+	   <ul>
+	     <li><a class = "footer-headline" >Sign in/up</a>
+		   <ul>
+		    <li><a class = "footer-subline" href = "sign_in.html">Sign in</a></li>
+		    <li><a class = "footer-subline" href = "sign_up.html">Sign up</a></li>
+		   </ul>
+		 </li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "copyright">
+	  <p class = "footer-subline2">All contents copyright © ExPerth. All rights reserved.</p>
+	  </div>
+	  
+	  <div class = "modify">
+	  <p class = "footer-subline3">Last updated: Thursday, 16 April,2015</p>
+	  </div>	  
+   </footer>
+ <!-- Footer / End -->
+
+ </div>
+<!-- Wrapper / End -->
+
+</body>
+</html>

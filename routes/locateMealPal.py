@@ -4,5 +4,4 @@ locate a meal pal
 """
 
 def locateMealPal():
-    # to do
-
+    return

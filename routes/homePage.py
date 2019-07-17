@@ -15,4 +15,5 @@ def getRealTimeCount():
 @app.route('/index', methods=['GET'])
 def index():
     cnt = getRealTimeCount()
-    return render_template("index.html", title = 'Home', count = cnt)
+    # return render_template("index.html", title = 'Home', count = cnt)
+    return render_template("Home.html")

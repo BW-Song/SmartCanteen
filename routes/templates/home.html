@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8" >
+	<title>Home</title>
+
+	<!-- CSS
+	================================================== -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/boxed.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/home_pictureslide.css') }}" >
+	<!-- js for the slide 
+	================================================== -->
+	<script type = "text/javascript">
+	window.onload = function () {
+            var container = document.getElementById('container');
+            var list = document.getElementById('list');
+            var buttons = document.getElementById('buttons').getElementsByTagName('span');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var index = 1;
+            var len = 5;
+            var animated = false;
+            var interval = 3000;
+            var timer;
+
+
+            function animate (offset) {
+                if (offset == 0) {
+                    return;
+                }
+                animated = true;
+                var time = 300;
+                var inteval = 10;
+                var speed = offset/(time/inteval);
+                var left = parseInt(list.style.left) + offset;
+
+                var go = function (){
+                    if ( (speed > 0 && parseInt(list.style.left) < left) || (speed < 0 && parseInt(list.style.left) > left)) {
+                        list.style.left = parseInt(list.style.left) + speed + 'px';
+                        setTimeout(go, inteval);
+                    }
+                    else {
+                        list.style.left = left + 'px';
+                        if(left>-960){
+                            list.style.left = -960 * len + 'px';
+                        }
+                        if(left<(-960 * len)) {
+                            list.style.left = '-960px';
+                        }
+                        animated = false;
+                    }
+                }
+                go();
+            }
+
+            function showButton() {
+                for (var i = 0; i < buttons.length ; i++) {
+                    if( buttons[i].className == 'on'){
+                        buttons[i].className = '';
+                        break;
+                    }
+                }
+                buttons[index - 1].className = 'on';
+            }
+
+            function play() {
+                timer = setTimeout(function () {
+                    next.onclick();
+                    play();
+                }, interval);
+            }
+            function stop() {
+                clearTimeout(timer);
+            }
+
+            next.onclick = function () {
+                if (animated) {
+                    return;
+                }
+                if (index == 5) {
+                    index = 1;
+                }
+                else {
+                    index += 1;
+                }
+                animate(-960);
+                showButton();
+            }
+            prev.onclick = function () {
+                if (animated) {
+                    return;
+                }
+                if (index == 1) {
+                    index = 5;
+                }
+                else {
+                    index -= 1;
+                }
+                animate(960);
+                showButton();
+            }
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = function () {
+                    if (animated) {
+                        return;
+                    }
+                    if(this.className == 'on') {
+                        return;
+                    }
+                    var myIndex = parseInt(this.getAttribute('index'));
+                    var offset = -960 * (myIndex - index);
+
+                    animate(offset);
+                    index = myIndex;
+                    showButton();
+                }
+            }
+
+            container.onmouseover = stop;
+            container.onmouseout = play;
+
+            play();
+
+        }
+	</script>
+</head>
+
+<body>
+ <script>window.onload function();</script>
+	<!-- Wrapper Start -->
+	<div id="wrapper">
+	
+	<!-- Header
+	================================================== -->
+	<header class="ie-dropdown-fix">
+	  <!-- Header -->
+		<div id="header">
+				<div id="logo">
+					<a href="#"><img src="images/logo.jpg" alt="ExPerth Logo" /></a>
+					<div id = "tagline">It's time to Explore Perth!</div>
+				</div>
+			
+			 <!-- Contact Details-->
+				<div id="contact-details">
+					<ul>
+						<li><i class="mini-ico-envelope"></i><a href="#">21644327@student.uwa.edu.au</a></li>
+						<li><i class="mini-ico-user"></i>+61 451 178 805</li>
+					</ul>
+				</div>		
+		</div>	
+	  <!-- Header / End -->
+
+	<!-- Navigation -->
+			<div id="navigation">
+				<ul id="nav">
+					<li><a href="home.html" class = "on">Home</a></li>
+					<li><a href="About.html">About Perth</a></li>
+					<li><a class = "cursor">Attractions</a>
+					  <ul>
+					    <li><a href = "Attractions.html">Top 3 places</a></li>
+					    <li><a href = "Attraction_fremantle.html"> Fremantle</a></li>
+						<li><a href = "Attraction_rottnest.html">Rottnest Island</a></li>
+						<li><a href = "Attraction_kingspark.html">Kings Park</a></li>
+					  </ul>
+					</li>
+					<li><a href="Survey.html">Survey</a></li>
+					<li><a class = "cursor">Sign in/up</a>
+					  <ul>
+					    <li><a href = "sign_in.html">Sign in</a></li>
+						<li><a href = "sign_up.html">Sign up</a></li>					
+					  </ul>
+					</li>
+				</ul>
+			</div> 			
+	<!-- Navigation / End -->
+	</header>
+    <!-- header End -->
+
+
+	<!-- Content
+	================================================== -->
+<section id="container">
+    <div id="list" style="left: -960px;">
+        <img src="images/slide_images/5.jpg" alt="5"/>
+        <img src="images/slide_images/1.jpg" alt="1"/>
+        <img src="images/slide_images/2.jpg" alt="2"/>
+        <img src="images/slide_images/3.jpg" alt="3"/>
+        <img src="images/slide_images/4.jpg" alt="4"/>
+        <img src="images/slide_images/5.jpg" alt="5"/>
+        <img src="images/slide_images/1.jpg" alt="1"/>
+    </div>
+    <div id="buttons">
+        <span index = "1" class="on"></span>
+        <span index = "2"></span>
+        <span index = "3"></span>
+        <span index = "4"></span>
+        <span index = "5"></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</section>
+	
+<!-- Footer
+================================================== -->
+   <footer class = "footer_main">
+      <div class = "column1">
+	   <ul>
+	     <li><a class = "footer-headline" href = "Disclaimer.html">Disclaimer</a></li>
+		 <li><a class = "footer-headline" href = "SiteMap.html">SiteMap</a></li>
+		 <li><a class = "footer-headline" href = "Contact.html">Contact Us</a></li>
+		 <li><a class = "footer-headline" href = "Validation.html">HTML5 && CSS validation</a></li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "column2">
+	   <ul>
+	     <li><a class = "footer-headline" href = "home.html">Home</a></li>
+		 <li><a class = "footer-headline" href = "About.html">About Perth</a></li>
+		 <li><a class = "footer-headline" href = "Survey.html">Survey</a></li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "column3">
+	   <ul>
+	     <li><a class = "footer-headline">Attractions</a>
+		   <ul>
+		     <li><a class = "footer-subline " href = "Attractions.html">Top 3 Places</a></li>
+		     <li><a class = "footer-subline " href = "Attraction_fremantle.html">Fremantle</a></li>
+			 <li><a class = "footer-subline " href = "Attraction_rottnest.html">Rottnest Island</a></li>
+			 <li><a class = "footer-subline " href = "Attraction_kingspark.html">Kings Park</a></li>
+		   </ul>
+		 </li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "column4">
+	   <ul>
+	     <li><a class = "footer-headline" >Sign in/up</a>
+		   <ul>
+		    <li><a class = "footer-subline" href = "sign_in.html">Sign in</a></li>
+		    <li><a class = "footer-subline" href = "sign_up.html">Sign up</a></li>
+		   </ul>
+		 </li>
+	   </ul>
+	  </div>
+	  
+	  <div class = "copyright">
+	  <p class = "footer-subline2">All contents copyright © ExPerth. All rights reserved.</p>
+	  </div>
+	  
+	  <div class = "modify">
+	  <p class = "footer-subline3">Last updated: Thursday, 16 April,2015</p>
+	  </div>	  
+   </footer>
+ <!-- Footer / End -->
+
+ </div>
+<!-- Wrapper / End -->
+
+</body>
+</html>

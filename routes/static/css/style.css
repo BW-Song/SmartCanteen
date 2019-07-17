@@ -1,0 +1,853 @@
+
+/* =================================================================== */
+/* 1. Import Section
+====================================================================== */
+@import url("base.css");				/* Default Reset, Typography, Forms, etc. */ 
+
+/* =================================================================== */
+/* 2. Header
+====================================================================== */
+.ie-dropdown-fix { 
+position: relative; 
+z-index: 55;
+}
+
+#header {
+min-height: 90px;
+}
+
+/* 2.1 Logo / Tagline
+====================================*/
+#logo {
+	margin-top: 22px;
+}
+
+#logo a img{float: left;}
+#tagline {
+	color: #888;
+	border-left: 1px solid #e9e9e9;
+	margin: 0 0 0 20px;
+	padding: 5px 0 5px 20px;
+	float: left;
+}
+
+/* 2.2 Contact Details in the header part
+====================================*/
+#contact-details {
+	float: right;
+	margin-top: 40px;
+	display: block;
+}
+
+#contact-details li {
+	display: inline;
+	padding-left: 10px;
+	margin-left: 10px;
+	border-left: 1px solid #e9e9e9;
+}
+
+#contact-details li:first-child {
+	border: none;
+	margin-left: 0;
+	padding:0;
+}
+
+#contact-details i {margin-right: 4px;}
+#contact-details a {color: #666;}
+#contact-details a:hover {color: #888;}
+
+
+
+/* 2.3 Navigation bar
+====================================*/
+#navigation {
+	background: #303030;
+	display: block;
+	width: 100%;
+	float: left;
+	max-height: 52px;
+	margin-bottom:20px;
+}
+
+#navigation ul,
+#navigation li {
+	list-style:none;
+	padding:0;
+	margin:0;
+	display:inline;
+}
+#navigation ul li{
+	float:left;
+	position:relative;
+}
+
+#navigation ul li a { 
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 17px 25px;
+}
+
+#navigation ul li a:hover {
+	background: #72b626;
+	color: #fff;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+#navigation ul li ul{display:none; position:absolute;}
+#navigation ul li:hover ul{ display:block;}
+#navigation ul li ul li{float:none; background-color:#303030; display:block;border-top:1px solid #fff;} 
+#navigation ul li ul li a{font-size:13px;width:100px}
+.on{background-color:#72b626}
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+
+
+/* =================================================================== */
+/* 3. Style shared by many web pages
+=============================================================*/
+
+/* 3.1 font && cursor
+====================================*/
+h1{
+font-family:"Comic Sans MS", cursive,sans-serif;
+color:black;
+}
+h3{
+text-align:center;
+}
+.cursor{
+cursor: pointer; 
+}
+
+/* 3.2 shared by Attraction_fremantle,Attraction_rottnest and Attraction_kingspark .html
+========================================================================================*/
+.bigfont{
+font-family:"Arial Black", Gadget, sans-serif;
+font-size:30px;
+}
+
+/* 3.3 Button Style and location in Sign in/up and Survey pages
+ ============================================================ */
+button.submit {
+    position:absolute;
+	border: 1px solid #509111;
+	border-bottom: 1px solid #5b992b;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	box-shadow: inset 0 1px 0 0 #9fd574;
+	-webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
+	-moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+	-ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+	-o-box-shadow: 0 1px 0 0 #9fd574 inset;
+	color: white;
+	font-weight: bold;
+	padding: 6px 20px;
+	text-align: center;
+	text-shadow: 0 -1px 0 #396715;
+}
+button.submit:hover {
+	opacity:.85;
+	cursor: pointer; 
+}
+button.submit:active {
+	border: 1px solid #20911e;
+	box-shadow: 0 0 10px 5px #356b0b inset; 
+	-webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+
+	-moz-box-shadow: 0 0 10px 5px #356b0b inset;
+	-ms-box-shadow: 0 0 10px 5px #356b0b inset;
+	-o-box-shadow: 0 0 10px 5px #356b0b inset;
+	
+}
+button.location1{
+    left:60px;
+	top:200px;
+	background-color: #68b12f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+	background: -webkit-linear-gradient(top, #68b12f, #50911e);
+	background: -moz-linear-gradient(top, #68b12f, #50911e);
+	background: -ms-linear-gradient(top, #68b12f, #50911e);
+	background: -o-linear-gradient(top, #68b12f, #50911e);
+}
+
+button.location2{
+    left:200px;
+	top:200px;
+	background-color: #68b12f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+	background: -webkit-linear-gradient(top, #68b12f, #50911e);
+	background: -moz-linear-gradient(top, #68b12f, #50911e);
+	background: -ms-linear-gradient(top, #68b12f, #50911e);
+	background: -o-linear-gradient(top, #68b12f, #50911e);
+}
+button.location3{
+    left:60px;
+	top:100px;
+	background-color: #ffb200;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffb200), to(#fe8301));
+	background: -webkit-linear-gradient(top, #ffb200, #fe8301);
+	background: -moz-linear-gradient(top, #ffb200, #fe8301);
+	background: -ms-linear-gradient(top, #ffb200, #fe8301);
+	background: -o-linear-gradient(top, #ffb200, #fe8301);
+}
+button.location4{
+    left:200px;
+	top:100px;
+	background-color: #ffb200;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffb200), to(#fe8301));
+	background: -webkit-linear-gradient(top, #ffb200, #fe8301);
+	background: -moz-linear-gradient(top, #ffb200, #fe8301);
+	background: -ms-linear-gradient(top, #ffb200, #fe8301);
+	background: -o-linear-gradient(top, #ffb200, #fe8301);
+}
+	
+	
+/* =================================================================== */
+/* 4. Style of each web page
+=============================================================*/
+
+/* 4.1 home.html
+====================================
+Please Refer to "css/home_pictureslide.css"
+*/
+
+/* 4.2 About.html
+====================================*/
+.About_main{
+background-image:url(../images/about.jpg);
+padding:60px;
+position:relative;
+height:900px;
+border-radius:5px;
+position:relative;
+margin-top:80px;
+}
+.Attraction_about_intro{
+position:absolute;
+top:700px;
+left:200px;
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:28px;
+background:#87CEEB;
+width:600px;
+padding:10px;
+border-radius:5px;
+}
+.About_instruction{
+position:absolute;
+left:320px;
+top:410px;
+width:400px;
+color:#0099FF;
+font-family:Verdana, Geneva, sans-serif;
+font-size:18px;
+}
+.toolboxfont{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+.tooltip_font{
+cursor: pointer;
+font-family:"Arial Black", Gadget, sans-serif;
+font-size:35px;
+font-weight:bold;
+position:absolute;
+line-height:50px;
+}
+
+.background_img{
+background-color:white;
+opacity:.80;
+width:250px;
+height:125px;
+border-radius:50%;
+position:absolute;
+top:450px;
+left:630px;
+margin:10px;
+z-index:1
+}
+.tooltip11{
+color: #0099FF;
+top:40px;
+left:35px;
+}
+
+.background_img2{
+background-color:
+white;opacity:.80;
+width:250px;
+height:125px;
+border-radius:50%;
+position:absolute;
+top:450px;
+left:60px;
+margin:10px;
+}
+.tooltip12{
+color: #0099FF;
+top:40px;
+left:20px;
+}
+
+.background_img3{
+background-color:yellow;
+opacity:.80;
+width:200px;
+height:200px;
+border-radius:50%;
+position:absolute;
+top:200px;
+left:150px;
+margin:10px;
+}
+.tooltip13{
+color: #0099FF;
+top:40px;
+left:20px;
+}
+
+.background_img4{
+background-color:#FFC0CB;
+opacity:.80;
+width:200px;
+height:200px;
+border-radius:50%;
+position:absolute;
+top:200px;
+left:600px;
+margin:10px;
+}
+.tooltip14{
+color: #0099FF;
+top:50px;
+left:65px;
+}
+
+.background_img5{
+background-color:white;
+opacity:.70;
+width:200px;
+height:200px;
+border-radius:50%;
+position:absolute;
+top:200px;
+left:370px;
+margin:10px;
+}
+.tooltip15{
+color: #0099FF;
+top:60px;
+left:45px;
+}
+
+.background_img6{
+background-color:#98FB98;
+opacity:.70;
+width:300px;
+height:150px;
+border-radius:50%;
+position:absolute;
+top:500px;
+left:320px;
+margin:10px;
+}
+.tooltip16{
+color: #0099FF;
+top:25px;
+left:60px;
+}
+
+
+/* 4.3 Attractions.html
+====================================
+Please refer to "picturewall.css"
+*/
+
+/* 4.4 Attraction_fremantle.html
+====================================*/
+.Attraction_fremantle_main{
+background:url(../images/purty_wood.png);
+padding:60px 85px 60px 85px;
+position:relative;
+height:670px;
+border-radius:5%;
+margin-top:80px;
+}
+.Attraction_fremantle_prison{
+padding-top:30px
+}
+.Attraction_fremantle_intro{
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:28px;
+}
+
+.picture{
+background:#fff;
+padding:8px 8px 10px;
+width:200px;
+height:150px;
+float:left;
+margin-right:10px;
+transform:rotate(10deg);
+}
+.picture2{
+background:#fff;
+padding:8px 8px 10px;
+width:200px;
+height:150px;
+float:right;
+margin-right:10px;
+transform:rotate(-10deg);
+}
+
+
+/* 4.5 Attraction_rottnest.html
+====================================*/
+.Attraction_rottnest_main{
+background:url(../images/purty_wood.png);
+padding:60px;
+position:relative;
+height:790px;
+border-radius:5%;
+position:relative;
+margin-top:80px;
+}
+.Attraction_rottnest_intro{
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#fff;
+line-height:28px;
+}
+.Attraction_rottnest_pic1{
+background:#fff;
+padding:8px 8px 10px;
+width:200px;
+height:150px;
+margin-right:10px;
+margin-top:20px;
+position:absolute;
+top:230px;
+left:210px;
+}
+
+.rottnest_para{
+width:400px;
+position:absolute;
+top:250px;
+left:450px;
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:28px;
+}
+
+.Attraction_rottnest_pic2{
+background:#fff;
+padding:8px 8px 10px;
+width:200px;
+height:150px;
+margin-right:10px;
+margin-top:20px;
+position:absolute;
+top:430px;
+left:80px;
+}
+
+.rottnest_para2{
+width:400px;
+position:absolute;
+top:450px;
+left:320px;
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:28px;
+}
+
+.Attraction_rottnest_pic3{
+background:#fff;
+padding:8px 8px 10px;
+width:200px;
+height:150px;
+margin-right:10px;
+margin-top:20px;
+position:absolute;
+top:630px;
+left:200px;
+}
+
+.rottnest_para3{
+width:400px;
+position:absolute;
+top:650px;
+left:430px;
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:28px;
+}
+
+.cite_move{
+position:absolute;
+top:830px;
+left:330px;
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:28px;
+}
+
+
+/* 4.6 Attraction_kingspark.html
+====================================*/
+.Attraction_kingspark_main{
+background:url(../images/purty_wood.png);
+padding:60px;
+position:relative;
+height:670px;
+border-radius:5%;
+margin-top:80px;
+}
+.Attraction_kingspark{
+position:absolute;
+top:350px; 
+font-family:Verdana, Geneva, sans-serif;
+font-size:17px;
+color:#000;
+line-height:30px;
+width:80%;
+padding:10px;
+margin:0 auto;
+}
+.picture3{
+display:inline-block;
+width:200px;
+height:150px;
+margin:10px 50px 50px 20px; 
+}
+
+
+/* 4.7 Survey.html
+====================================*/
+.Survey_main{
+background-image:url(../images/purty_wood.png);
+padding:60px;
+position:relative;
+height:600px;
+border-radius:5px;
+margin-top:80px;
+}
+.experience{
+position:absolute;
+top:200px;
+left:100px;
+border-radius:10px;
+}
+.location5{
+position:absolute;
+left:300px;
+top:600px;
+background-color: #68b12f;
+background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+background: -webkit-linear-gradient(top, #68b12f, #50911e);
+background: -moz-linear-gradient(top, #68b12f, #50911e);
+background: -ms-linear-gradient(top, #68b12f, #50911e);
+background: -o-linear-gradient(top, #68b12f, #50911e);
+}
+.location6{
+position:absolute;
+left:500px;
+top:600px;
+background-color: #68b12f;
+background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+background: -webkit-linear-gradient(top, #68b12f, #50911e);
+background: -moz-linear-gradient(top, #68b12f, #50911e);
+background: -ms-linear-gradient(top, #68b12f, #50911e);
+background: -o-linear-gradient(top, #68b12f, #50911e);
+}
+
+
+/* 4.8 sign_up.html && sign_in.html
+====================================*/
+.sign_up_main{
+background-color:#F1F1F1;
+padding:60px;
+border-radius:2px;
+margin-top:80px;
+}
+.sign_up_head1{
+background: url(../images/green.jpg) no-repeat;
+width: 878px;
+position: absolute;
+left: 480px;
+text-align: left;
+text-indent: 100px;
+top: 280px;
+padding: 10px;
+border-radius:5px;
+}
+.sign_up_head2{
+background: url(../images/yellow.jpg) no-repeat;
+width: 878px;
+position: absolute;
+left: 480px;
+text-align: left;
+text-indent: 100px;
+top: 280px;
+padding: 10px;
+border-radius:5px;
+}
+.sign_up_form{
+width:600px;
+margin:0px auto;
+padding:60px;
+position:relative;
+}
+.sign_up_form input,select{
+border-radius:2px;
+height:20px;
+padding:2px;
+margin-left:15px;
+}
+.sign_up_form input:focus, .sign_up_form textarea:focus {
+border:1px solid red; 
+box-shadow: 0 0 3px #aaa; 
+padding-right:70px;
+}
+
+.sign_in_main{
+background-color:#F1F1F1;
+padding:60px;
+margin-top:80px;
+}
+.font{
+font-family:Verdana, Geneva, sans-serif;
+font-size:16px;
+color:black;
+}
+.right{
+text-align:right;
+}
+.center{
+position:relative;
+left:130px;
+top:0px;
+}
+
+
+/* 4.9 Disclaimer.html 
+====================================*/
+.Disclaimer_main{
+background-image:url(../images/purty_wood.png);
+padding:60px;
+position:relative;
+height:600px;
+border-radius:5px;
+margin-top:80px;
+}
+.column14{
+position:absolute;
+top:100px;
+left:60px;
+}
+.Disclaimer_para1{
+color:black;
+font-size:15px;
+line-height:20px;
+width:860px;
+}
+.Disclaimer_para2{
+color:black;
+font-size:15px;
+line-height:30px;
+width:20px;
+}
+
+/* 4.10 SiteMap.html
+====================================*/
+.SiteMap_main{
+background:url(../images/purty_wood.png);
+padding:60px 85px 60px 85px;
+position:relative;
+height:300px;
+border-radius:5px;
+margin-top:80px;
+}
+.sitemaptitle{
+position:absolute;
+top:10px;
+left:60px;
+background-image:url(../images/blue.jpg);
+padding:10px;
+height:50px;
+color:black;
+border-radius:5px;
+text-indent:150px;
+width: 878px;
+}
+.footer-headline2 {
+display: block;	
+color:black;
+font-family:"Arial Black", Gadget, sans-serif;
+font-size:15px;
+margin: 15px;
+}
+.footer-subline22 {
+display: block;	
+color:black;
+font-family:Arial, Helvetica, sans-serif;
+font-size:13px;
+margin-top:10px;
+margin-left:30px;
+}
+
+.column12{
+width:220px;
+position:absolute;
+top:90px;
+left:30px;
+}
+
+.column22{
+width:220px;
+position:absolute;
+top:90px;
+left:220px;
+}
+
+.column32{
+width:220px;
+position:absolute;
+top:90px;
+left:440px;
+}
+
+.column42{
+width:220px;
+position:absolute;
+top:90px;
+left:660px;
+}
+
+/* 4.11 Contact.html
+====================================*/
+.column13{
+width:960px;
+position:absolute;
+top:120px;
+left:280px;
+}
+.Contact_Us{
+color:black;
+font-size:15px;
+}
+.Contact_title{
+font-size:15px;
+font-weight:bold;
+margin-top:90px;
+}
+
+/* 4.12 Validate.html
+====================================*/
+.validate{
+background-image:url(../images/purty_wood.png);
+margin-top:80px;
+padding:20px;
+}
+.validate_list{
+margin-left:50px;
+margin-bottom:50px;
+}
+
+/* =================================================================== */
+/* 5. Footer
+====================================================================== */
+footer, footer p, footer a{
+color: white;
+}
+footer a:hover {
+color: #aaa;
+}
+.footon{
+color:#303030;
+}
+
+.footer_main{
+background:#303030;
+position: relative;
+width: 960px;
+margin: 20px auto;
+padding: 0px;
+height:200px
+}
+
+.footer-headline {
+display: block;	
+color:white;
+font-family:"Arial Black", Gadget, sans-serif;
+font-size:12px;
+margin: 15px;
+}
+.footer-subline {
+display: block;	
+color:white;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+margin-top:10px;
+margin-left:30px;
+}
+.column1{
+width:220px;
+position:absolute;
+top:5px;
+left:10px;
+}
+
+.column2{
+width:220px;
+position:absolute;
+top:5px;
+left:200px;
+}
+
+.column3{
+width:220px;
+position:absolute;
+top:5px;
+left:420px;
+}
+
+.column4{
+width:220px;
+position:absolute;
+top:5px;
+left:640px;
+}
+.copyright{
+position:absolute;
+top:170px;
+left:20px;
+width:500px;
+}
+
+.modify{
+position:absolute;
+top:170px;
+left:350px;
+width:500px;
+}
+

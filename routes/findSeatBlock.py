@@ -4,5 +4,4 @@ search for appropriate seat block
 """
 
 def findSeatBlock():
-    # to do
-
+    return
